@@ -22,7 +22,7 @@ public class App
     
     bello.uebeKunststueck(new Sitz("Sitz"));
     bello.uebeKunststueck(new Bring("Bring"));
-    bello.macheKunststuecke();
+    bello.macheKunststuecke(10);
 
   }
 }
