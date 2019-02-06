@@ -7,6 +7,8 @@ public class Hund {
   private final int gewicht;
   private String fellfarbe;
   private String name;
+  private String rasse;
+  
   private final ArrayList<Kunststueck> tricks = new ArrayList();
   
   public Hund(int gewicht) { // der Konstruktor
@@ -19,6 +21,10 @@ public class Hund {
   
   public void setName(String pName) {
       name = pName;
+  }
+  
+  public void setRasse(String pRasse) {
+      rasse = pRasse;
   }
   
   @Override
