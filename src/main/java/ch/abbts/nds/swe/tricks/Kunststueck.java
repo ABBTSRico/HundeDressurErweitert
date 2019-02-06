@@ -12,5 +12,9 @@ public abstract class Kunststueck {
         this.name = name;
     }
     
+    public String getName() {
+        return name;
+    }
+    
     public abstract String machKunststück();
 }

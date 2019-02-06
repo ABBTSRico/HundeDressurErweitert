@@ -42,7 +42,18 @@ public class Hund {
     {
         tricks.add(trick);
     }
-
+   
+    public String getKunststuecke() {
+        StringBuilder trickList = new StringBuilder(tricks.size());
+        
+        // Das ist ein Functional (auch Lambda Funktion genannt). 
+        // Ein cooles neues Feature in Java 8!
+        tricks.forEach((trick) -> {
+            trickList.append(trick.getName()).append("\n");
+        });
+        return trickList.toString();
+    }
+    
     /**
      * Der Hund macht eime bestimmte Anzahl Kunststuecke. Er wählt diese 
      * zufaellig aus den gelernten Tricks aus.

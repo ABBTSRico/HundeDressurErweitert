@@ -6,23 +6,26 @@ import ch.abbts.nds.swe.tricks.*;
  * Die Main-Klasse des Projekts. Trainiert den Hund.
  *
  */
-public class App 
-{
-  public static void main(String[] args) {
+public class App {
 
-    // Objekte erzeugen und Membervariable initialisieren
-    Hund fido = new Hund(4);   
-    Hund bello = new Hund(12);
+    public static void main (String[] args)
+    {
 
-    // Methoden auf den Objekten aufrufen
-    fido.gibLaut(2);
-    bello.gibLaut(1);
-    System.out.println(fido);
-    System.out.println(bello);
-    
-    bello.uebeKunststueck(new Sitz("Sitz"));
-    bello.uebeKunststueck(new Bring("Bring"));
-    bello.macheKunststuecke(10);
+        // Objekte erzeugen und Membervariable initialisieren
+        Hund fido = new Hund(4);
+        Hund bello = new Hund(12);
 
-  }
+        // Methoden auf den Objekten aufrufen
+        fido.gibLaut(2);
+        bello.gibLaut(1);
+        System.out.println(fido);
+        System.out.println(bello);
+
+        bello.uebeKunststueck(new Sitz("Sitz"));
+        bello.uebeKunststueck(new Bring("Bring"));
+
+        System.out.println("Ich kann folgende Kunststücke: \n" + bello.getKunststuecke());
+        bello.macheKunststuecke(1);
+
+    }
 }
