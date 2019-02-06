@@ -1,4 +1,4 @@
-package ch.abbts.nds.swe.mavenproject2;
+package ch.abbts.nds.swe.main;
 
 /**
  * Hello world!
