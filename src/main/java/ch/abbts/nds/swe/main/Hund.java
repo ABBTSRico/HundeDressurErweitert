@@ -5,12 +5,17 @@ import java.util.ArrayList;
 
 public class Hund {            
   private final int gewicht;
+  private String fellfarbe;
   private final ArrayList<Kunststueck> tricks = new ArrayList();
   
   public Hund(int gewicht) { // der Konstruktor
     this.gewicht = gewicht;
   }
 
+  public void setFellfarbe(String farbe) {
+      fellfarbe = farbe;
+  }
+  
   @Override
   public String toString() {
     return "Hund: " + "gewicht = " + gewicht + " kg";
