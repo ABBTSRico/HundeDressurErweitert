@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Hund {            
   private final int gewicht;
   private String fellfarbe;
+  private String name;
   private final ArrayList<Kunststueck> tricks = new ArrayList();
   
   public Hund(int gewicht) { // der Konstruktor
@@ -14,6 +15,10 @@ public class Hund {
 
   public void setFellfarbe(String farbe) {
       fellfarbe = farbe;
+  }
+  
+  public void setName(String pName) {
+      name = pName;
   }
   
   @Override
