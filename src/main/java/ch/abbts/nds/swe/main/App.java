@@ -1,6 +1,9 @@
 package ch.abbts.nds.swe.main;
 
+import ch.abbts.nds.swe.exceptions.HungerException;
 import ch.abbts.nds.swe.tricks.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Die Main-Klasse des Projekts. Trainiert den Hund.
@@ -25,7 +28,11 @@ public class App {
         bello.uebeKunststueck(new Bring("Bring"));
 
         System.out.println("Ich kann folgende Kunststücke: \n" + bello.getKunststuecke());
-        bello.macheKunststuecke(1);
-
+        try {
+            bello.macheKunststuecke(10);
+        } catch (HungerException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
     }
 }

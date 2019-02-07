@@ -1,5 +1,6 @@
 package ch.abbts.nds.swe.main;
 
+import ch.abbts.nds.swe.exceptions.HungerException;
 import ch.abbts.nds.swe.tricks.Kunststueck;
 import java.util.ArrayList;
 
@@ -9,12 +10,14 @@ public class Hund {
     private String fellfarbe;
     private String name;
     private String rasse;
+    private int saettigung;
 
     private final ArrayList<Kunststueck> tricks = new ArrayList();
 
     public Hund (int gewicht)
     { // der Konstruktor
         this.gewicht = gewicht;
+        this.saettigung = 6;
     }
 
     public void setFellfarbe (String farbe)
@@ -30,6 +33,10 @@ public class Hund {
     public void setRasse (String pRasse)
     {
         rasse = pRasse;
+    }
+    
+    public void fuettern(int food) {
+        saettigung += food;
     }
 
     @Override
@@ -57,14 +64,22 @@ public class Hund {
     /**
      * Der Hund macht eime bestimmte Anzahl Kunststuecke. Er wählt diese 
      * zufaellig aus den gelernten Tricks aus.
+     * Jedes Kunststueck kostet einen Saettigungspunkt. Wenn alle Punkte
+     * aufgebraucht sind hat der Hund Hunger und die Methode wirft eine 
+     * Exception.
      * @param number Anzahl der zu machenden Kunststuecke
+     * @throws ch.abbts.nds.swe.exceptions.HungerException
      */
-    public void macheKunststuecke (int number)
+    public void macheKunststuecke (int number) throws HungerException
     {
         int range = tricks.size();
         for( int i = 0; i < number; i++ ){
             int trickNr = (int) (Math.random() * range);
             System.out.println(tricks.get(trickNr).machKunststück());
+            --saettigung;
+            if (saettigung <= 0) {
+                throw (new HungerException());
+            }
         }
     }
 
