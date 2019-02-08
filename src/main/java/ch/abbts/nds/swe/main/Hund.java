@@ -18,6 +18,8 @@ public class Hund {
     { // der Konstruktor
         this.gewicht = gewicht;
         this.saettigung = 6;
+        this.fellfarbe = "unbekannt";
+        this.rasse = "unbekannt";
     }
 
     public void setFellfarbe (String farbe)
