@@ -28,11 +28,24 @@ public class App {
         bello.uebeKunststueck(new Bring("Bring"));
 
         System.out.println("Ich kann folgende Kunststücke: \n" + bello.getKunststuecke());
-        try {
-            bello.macheKunststuecke(10);
-        } catch (HungerException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-            
+        App.macheKunststuecke(bello, 10);
+    }
+
+    /**
+     * Macht die erfoderliche Anzahl Kunststuecke. Da der Hund nach 6 Tricks
+     * gefüttert werden muss, 
+     * @param hund
+     * @param anzahl 
+     */
+    static void macheKunststuecke (Hund hund, int anzahl)
+    {
+        for( int i = 0; i < anzahl; i++ ){
+            try {
+                hund.macheKunststuecke(1);
+            } catch (HungerException ex) {
+                System.out.println("Füttere mich!");;
+                hund.fuettern(6);
+            }
         }
     }
 }
