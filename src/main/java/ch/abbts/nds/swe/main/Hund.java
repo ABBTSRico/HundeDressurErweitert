@@ -42,7 +42,19 @@ public class Hund {
     @Override
     public String toString ()
     {
-        return "Hund: " + "gewicht = " + gewicht + " kg";
+        StringBuilder description = new StringBuilder(10);
+        
+        description.append("Hund ")
+                .append(name)
+                .append(" ist ein ")
+                .append(rasse)
+                .append("\nSein Fell ist ")
+                .append(fellfarbe)
+                .append(" und er wiegt ")
+                .append(gewicht)
+                .append(" kg");
+        
+        return description.toString();
     }
 
     public void uebeKunststueck (Kunststueck trick)
