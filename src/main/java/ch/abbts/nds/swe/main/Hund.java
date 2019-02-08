@@ -20,6 +20,7 @@ public class Hund {
         this.saettigung = 6;
         this.fellfarbe = "unbekannt";
         this.rasse = "unbekannt";
+        this.name = "Hund";
     }
 
     public void setFellfarbe (String farbe)
