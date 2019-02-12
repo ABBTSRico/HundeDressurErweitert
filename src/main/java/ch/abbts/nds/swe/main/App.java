@@ -26,6 +26,7 @@ public class App {
 
         bello.uebeKunststueck(new Sitz("Sitz"));
         bello.uebeKunststueck(new Bring("Bring"));
+        bello.uebeKunststueck(new Jump("Jump"));
 
         System.out.println("Ich kann folgende Kunststücke: \n" + bello.getKunststuecke());
 
